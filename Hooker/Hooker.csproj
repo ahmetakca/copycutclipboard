@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77B3825B-ACE7-4130-A74D-998150696C9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hooker</RootNamespace>
+    <AssemblyName>Hooker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Events\CallbackData.cs" />
+    <Compile Include="Application\HookProcedure.cs" />
+    <Compile Include="Application\HookProcedureHandle.cs" />
+    <Compile Include="Common\HookIds.cs" />
+    <Compile Include="Common\KeyBoardHookStruct.cs" />
+    <Compile Include="Events\EventFacade.cs" />
+    <Compile Include="Events\GlobalEventFacade.cs" />
+    <Compile Include="Events\GlobalKeyListener.cs" />
+    <Compile Include="Events\GlobalMouseListener.cs" />
+    <Compile Include="Events\KeyEventArgsExt.cs" />
+    <Compile Include="Events\KeyEventPressArgsExt.cs" />
+    <Compile Include="Helpers\HookHelper.cs" />
+    <Compile Include="Hook.cs" />
+    <Compile Include="HotKeys\HotKeyArgs.cs" />
+    <Compile Include="HotKeys\HotKeySet.cs" />
+    <Compile Include="HotKeys\HotKeySetCollection.cs" />
+    <Compile Include="Events\AppEventFacade.cs" />
+    <Compile Include="Implementation\AppKeyListener.cs" />
+    <Compile Include="Implementation\AppMouseListener.cs" />
+    <Compile Include="Implementation\BaseListener.cs" />
+    <Compile Include="Application\HookResult.cs" />
+    <Compile Include="Implementation\KeyboardState.cs" />
+    <Compile Include="Implementation\KeyListener.cs" />
+    <Compile Include="NativeMethod\HookNativeMethods.cs" />
+    <Compile Include="Common\AppMouseStruct.cs" />
+    <Compile Include="Implementation\ButtonSet.cs" />
+    <Compile Include="Events\Callback.cs" />
+    <Compile Include="Common\Messages.cs" />
+    <Compile Include="Implementation\MouseListener.cs" />
+    <Compile Include="Common\MouseStruct.cs" />
+    <Compile Include="NativeMethod\MouseNativeMethods.cs" />
+    <Compile Include="NativeMethod\NativeMethods.cs" />
+    <Compile Include="Common\Point.cs" />
+    <Compile Include="Implementation\Subscribe.cs" />
+    <Compile Include="Interfaces\IKeyboardEvents.cs" />
+    <Compile Include="Interfaces\IKeyboarMouseEventes.cs" />
+    <Compile Include="Interfaces\IMouseEvents.cs" />
+    <Compile Include="Events\MouseEventExtArgs.cs" />
+    <Compile Include="NativeMethod\KeyboardNativeMethods.cs" />
+    <Compile Include="NativeMethod\ThreadNativeMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
